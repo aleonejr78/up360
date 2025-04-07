@@ -274,12 +274,13 @@ if [ -e "SetupOrion" ]; then
     rm SetupOrion
 fi
 
-# Baixa o script
-curl -sSL https://raw.githubusercontent.com/oriondesign2015/SetupOrion/main/SetupOrion -o SetupOrion
+# Baixa o script 
+curl -sSL https://raw.githubusercontent.com/aleonejr78/up360/main/SetupUp360 -o SetupUp360
+
 if [ $? -eq 0 ]; then
     echo "14/14 - [ OK ] - Baixando o script"
     # Executa o script baixado
-    chmod +x SetupOrion
+    chmod +x SetupUp360
     ./SetupOrion
 else
     echo "14/14 - [ OFF ] - Baixando o script"
@@ -296,4 +297,4 @@ sudo apt update
 sudo apt upgrade -y
 
 clear
-rm SetupOrion
+rm SetupUp360
