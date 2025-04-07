@@ -268,10 +268,10 @@ fi
 
 echo ""
 
-# Verifica se o arquivo SetupOrion já existe
-if [ -e "SetupOrion" ]; then
+# Verifica se o arquivo SetupUp360 já existe
+if [ -e "SetupUp360" ]; then
     echo ""
-    rm SetupOrion
+    rm SetupUp360
 fi
 
 # Baixa o script 
@@ -281,7 +281,7 @@ if [ $? -eq 0 ]; then
     echo "14/14 - [ OK ] - Baixando o script"
     # Executa o script baixado
     chmod +x SetupUp360
-    ./SetupOrion
+    ./SetupUp360
 else
     echo "14/14 - [ OFF ] - Baixando o script"
     echo "Encerrando o setup"
