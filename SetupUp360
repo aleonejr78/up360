@@ -5475,21 +5475,42 @@ sleep 1
 
 ## Verifica container postgres e cria banco no postgres
 
-verificar_container_postgres
+##Substituir verificação de postgres por pgvector
+#verificar_container_postgres
+#if [ $? -eq 0 ]; then
+#    echo "1/3 - [ OK ] - Postgres já instalado"
+#    pegar_senha_postgres > /dev/null 2>&1
+#    echo "2/3 - [ OK ] - Copiando senha do Postgres"
+#    criar_banco_postgres_da_stack "evolution${1:+_$1}"
+#    echo "3/3 - [ OK ] - Criando banco de dados"
+#    echo ""
+#else
+#    ferramenta_postgres
+#    pegar_senha_postgres > /dev/null 2>&1
+#    criar_banco_postgres_da_stack "evolution${1:+_$1}"
+#fi
+
+#pegar_senha_postgres > /dev/null 2>&1
+##
+
+verificar_container_pgvector
 if [ $? -eq 0 ]; then
-    echo "1/3 - [ OK ] - Postgres já instalado"
-    pegar_senha_postgres > /dev/null 2>&1
-    echo "2/3 - [ OK ] - Copiando senha do Postgres"
-    criar_banco_postgres_da_stack "evolution${1:+_$1}"
+    echo "1/3 - [ OK ] - PgVector já instalado"
+    pegar_senha_pgvector > /dev/null 2>&1
+    echo "2/3 - [ OK ] - Copiando senha do PgVector"
+    criar_banco_pgvector_da_stack "woofedcrm${1:+_$1}"
     echo "3/3 - [ OK ] - Criando banco de dados"
     echo ""
 else
-    ferramenta_postgres
-    pegar_senha_postgres > /dev/null 2>&1
-    criar_banco_postgres_da_stack "evolution${1:+_$1}"
+    ferramenta_pgvector
+    pegar_senha_pgvector > /dev/null 2>&1
+    criar_banco_pgvector_da_stack "woofedcrm${1:+_$1}"
 fi
 
-pegar_senha_postgres > /dev/null 2>&1
+pegar_senha_pgvector > /dev/null 2>&1
+
+
+criar_banco_postgres_da_stack "evolution${1:+_$1}"
 
 ## Mensagem de Passo
 echo -e "\e[97m• VERIFICANDO/INSTALANDO REDIS \e[33m[3/5]\e[0m"
