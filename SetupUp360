@@ -5510,7 +5510,7 @@ fi
 pegar_senha_pgvector > /dev/null 2>&1
 
 
-criar_banco_postgres_da_stack "evolution${1:+_$1}"
+criar_banco_pgvector_da_stack "evolution${1:+_$1}"
 
 ## Mensagem de Passo
 echo -e "\e[97m• VERIFICANDO/INSTALANDO REDIS \e[33m[3/5]\e[0m"
