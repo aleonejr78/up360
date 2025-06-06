@@ -5498,13 +5498,13 @@ if [ $? -eq 0 ]; then
     echo "1/3 - [ OK ] - PgVector já instalado"
     pegar_senha_pgvector > /dev/null 2>&1
     echo "2/3 - [ OK ] - Copiando senha do PgVector"
-    criar_banco_pgvector_da_stack "woofedcrm${1:+_$1}"
+    criar_banco_pgvector_da_stack "evolution${1:+_$1}"
     echo "3/3 - [ OK ] - Criando banco de dados"
     echo ""
 else
     ferramenta_pgvector
     pegar_senha_pgvector > /dev/null 2>&1
-    criar_banco_pgvector_da_stack "woofedcrm${1:+_$1}"
+    criar_banco_pgvector_da_stack "evolution${1:+_$1}"
 fi
 
 pegar_senha_pgvector > /dev/null 2>&1
