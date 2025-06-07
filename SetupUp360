@@ -5570,7 +5570,7 @@ services:
       ## Configuração do Banco de Dados
       - DATABASE_ENABLED=true
       - DATABASE_PROVIDER=postgresql
-      - DATABASE_CONNECTION_URI=postgresql://postgres:$senha_postgres@postgres:5432/evolution${1:+_$1}
+      - DATABASE_CONNECTION_URI=postgresql://postgres:$senha_postgres@pgvector:5432/evolution${1:+_$1}
       - DATABASE_CONNECTION_CLIENT_NAME=evolution${1:+_$1}
       - DATABASE_SAVE_DATA_INSTANCE=true
       - DATABASE_SAVE_DATA_NEW_MESSAGE=true
